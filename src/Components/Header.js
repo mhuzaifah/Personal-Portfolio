@@ -2,7 +2,6 @@ import React from "react";
 import { FaHome, FaUser, FaFolderOpen, FaEnvelope } from "react-icons/fa";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import Logo from './logo-portfolio.png';
 
 function Header() {
     const location = useLocation();
@@ -22,7 +21,7 @@ function Header() {
     return (
         <div className="header">
             <div className="headerLogo">
-                <img src={Logo} alt="Logo" />
+                <img src="logo-portfolio.png" alt="Logo" />
             </div>
             <div className="navBar">
                 {navItems.map((item, index) => (
