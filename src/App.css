@@ -6,13 +6,18 @@
   font-optical-sizing: auto;
 }
 .App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
-  width: 100vw;
+}
+
+.background {
+  background-color: #ffffff;;
 }
 
 /* CARDS */
@@ -226,7 +231,6 @@ button[type="submit"]:hover {
   padding: 10px 20px;
   background-color: rgba(255, 255, 255, .95);
   color: black;
-  margin-top: 1.5%;
   border-radius: 5vw;
   z-index: 1111;
   overflow: hidden;
@@ -303,7 +307,7 @@ button[type="submit"]:hover {
   display: flex;
   justify-content: center;
   height: 80vh;
-  margin-top: 1%;
+  margin-top: 2.5%;
 }
 
 /* HOME PAGE */
@@ -453,7 +457,7 @@ input, textarea {
 /* CUBE */
 .stage-cube-cont {
   width: 50%;
-  height: 100%;
+  height: 50%;
   top: 0;
   padding-top: 18%;
   margin-left: 0;
