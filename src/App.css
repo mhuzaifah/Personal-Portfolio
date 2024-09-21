@@ -20,6 +20,14 @@
   background-color: #ffffff;;
 }
 
+.designBackground {
+  background-image: url("../public/background.png");
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background fixed during scrolling */
+}
+
 /* CARDS */
 .card {
   width: 200px;
@@ -28,30 +36,12 @@
   position: relative;
   border-radius: 2rem 0.5rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-}
-.animate-pop {
-  animation-duration: 0.75s;
-  animation-name: animate-pop;
-  animation-timing-function: ease-in-out;
-}
-@keyframes animate-pop {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.05);
-  }
-  75% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s forwards 0.25s;
 }
 .card:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 .cardContainer {
   display: flex;
@@ -135,23 +125,26 @@ button {
   border-radius: 0.5rem 2rem;
   cursor: pointer;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  transition: all 0.5s ease;
 }
 button.active, button.focus {
   background: linear-gradient(114.2deg, #20e4fa 22.6%, rgb(255, 180, 239) 67.7%);
 }
 button:hover {
-
+  transform: perspective(100px) translateX(7px) rotateX(3deg) rotateY(3deg) scale(1);
 }
 
 button[type="submit"] {
+  width: 20%;
   padding: 10px 20px;
   background: linear-gradient(114.2deg, #20e4fa 22.6%, rgb(255, 180, 239) 67.7%);
   color: black;
   font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem 2rem;
   cursor: pointer;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 0.5s ease;
 }
 button[type="submit"]:hover {
   box-shadow: none;
@@ -358,6 +351,38 @@ button[type="submit"]:hover {
   transform: translateY(20px);
   animation: slideIn 1.5s forwards 0.5s;
 }
+.textStyle {
+  --bg-size: 400%;
+  --color-one: #20c7fa;
+  --color-two: rgb(255, 180, 239);
+  background: linear-gradient(
+          90deg,
+          var(--color-one),
+          var(--color-two),
+          var(--color-one)
+  ) 0 0 / 100% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: var(--bg-size) auto;
+  animation: move-bg 8s infinite linear;
+}
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .textStyle {
+    animation: move-bg 8s linear infinite;
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
 
 /* PROJECTS */
 .projectsContainer {
@@ -367,7 +392,7 @@ button[type="submit"]:hover {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 10vw;
   row-gap: 5vh;
-  padding-top: 50px;
+  padding-top: 25px;
   transition: all 0.3s ease;
 }
 

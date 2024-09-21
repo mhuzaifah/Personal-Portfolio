@@ -56,9 +56,9 @@ function Contact() {
                         </div>
                         <div className="form-group">
                             <label htmlFor="description">Description:</label>
-                            <textarea id="description" name="description" required></textarea>
+                            <textarea id="description" name="description" required style={{resize:'none'}}></textarea>
                         </div>
-                        <button type="submit">SEND</button>
+                        <button type="submit" className="button" >SEND</button>
                     </form>
                 </div>
                 <a target = "_blank" rel = "noreferrer" href = "mailto:mhuzaifah989@gmail.com" style={{display:'flex', justifyContent:'center', alignItems:'center'}}>

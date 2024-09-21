@@ -24,7 +24,7 @@ function App() {
     }, [location]);
 
     return (
-        <div className="App background">
+        <div className="App designBackground">
             <Header />
             <div className='content'>
                 { loading ?
