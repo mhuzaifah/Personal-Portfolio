@@ -13,6 +13,10 @@ function App() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        document.title = "Muhammad Huzaifah Portfolio";
+    }, []);
+
+    useEffect(() => {
         const handleStart = () => setLoading(true);
         const handleComplete = () => setLoading(false);
 
