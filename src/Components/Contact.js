@@ -13,9 +13,9 @@ function Contact() {
 
         emailjs
             .sendForm(
-                refForm.current,
                 process.env.REACT_APP_EMAILJS_SERVICE_ID,
                 process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                refForm.current,
                 process.env.REACT_APP_EMAILJS_USER_ID
             )
             .then(
@@ -25,6 +25,7 @@ function Contact() {
                 },
                 () => {
                     alert("Failed to send the message, please try again")
+                    console.log()
                 }
             )
 
@@ -39,7 +40,7 @@ function Contact() {
                     <FaLinkedin className="contactImage"  style={{fontSize:'15em'}} />
                 </a>
                 <div className='submissionContainer' onSubmit={sendEmail} >
-                    <form ref={refForm}>
+                    <form ref={refForm} >
                         <div className="form-row">
                             <div className="form-group">
                                 <label htmlFor="name">Name:</label>
